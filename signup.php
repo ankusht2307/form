@@ -147,7 +147,7 @@
     <div class="row">
         <div class="col-md-4 col-sm-4 col-xs-12"></div>
         <div class="col-md-4 col-sm-4 col-xs-12">
-          <form name="MainForm" class="MainForm">
+          <form name="MainForm" class="MainForm" method="post">
             <div class="form-group">
               <select name="MonthSelector" onChange="javascript:Validate();" class="form-control">
                 <option value="0" selected>Select Month</option>
