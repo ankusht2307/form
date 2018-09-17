@@ -1,0 +1,186 @@
+
+
+/***body font***/
+
+body{
+	font-family: "Josefin Slab", "Helvetica Neue", "Helvetica", Arial, sans-serif;
+	color: #000;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	background-color: #fff;
+    background-size: contain;
+
+}
+
+.navbar{
+	 margin-bottom: 0px;
+}
+
+/** jumbotron **/
+
+.jumbotron{
+    
+    background: rgba(254,239,200,1);
+background: -moz-linear-gradient(top, rgba(254,239,200,1) 0%, rgba(254,239,200,1) 15%, rgba(255,169,10,1) 54%, rgba(255,255,89,1) 98%, rgba(255,187,0,1) 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(254,239,200,1)), color-stop(15%, rgba(254,239,200,1)), color-stop(54%, rgba(255,169,10,1)), color-stop(98%, rgba(255,255,89,1)), color-stop(100%, rgba(255,187,0,1)));
+background: -webkit-linear-gradient(top, rgba(254,239,200,1) 0%, rgba(254,239,200,1) 15%, rgba(255,169,10,1) 54%, rgba(255,255,89,1) 98%, rgba(255,187,0,1) 100%);
+     background-repeat: no-repeat;
+     background-size: 100% 100%;
+     margin-bottom: 0px;
+     
+
+}
+
+.img-responsive{
+	 border-radius:50%;
+}
+
+#chooseme{
+	margin-top: 15px;
+	margin-bottom: 25px;
+	
+}
+
+#one{
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+#two{
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+#three{
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+#gb{
+	margin:10px 10px 10px 10px ;
+}
+
+#cb{
+	margin:10px 10px 10px 10px ;
+}
+
+#lb{
+	margin:10px 10px 10px 10px ;
+}
+
+#mb{
+	margin:10px 10px 10px 10px ;
+}
+
+#wb{
+	margin:10px 10px 10px 10px ;
+}
+
+#thethought{
+
+	background-image:url(img/orange4.jpg);
+	 background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+ul.footeranchor{
+	text-align: center;
+	 color: black;
+	 list-style-type: none;
+   
+}
+
+.footeranchor a {
+    color: black;
+    text-decoration: none;
+}
+
+.footeranchor a:hover,a:focus {
+    
+ text-decoration: none;
+    color: orange;
+    font-size: 15px;
+
+}
+
+ul.navbar-nav a:hover , a:focus{
+
+	 text-decoration: none;
+    color: orange;
+    font-size: 17px;
+
+}
+#buttonn .btn:hover{
+
+	  text-decoration: none;
+    color: white;
+    font-size: 20px;
+    background-color: white;
+
+
+}
+
+#subs .btn:hover{
+
+	  text-decoration: none;
+    color: white;
+    font-size: 20px;
+    background-color: white;
+
+}
+
+#thearies{
+	background-image:url(img/foot.JPG);
+	 background-repeat: no-repeat;
+    background-size: 100% 100%;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+#signup{
+
+	background-image:url(img/body.JPG);
+	 background-repeat: no-repeat;
+   background-size: 100% 100%;
+    
+}
+
+.form-container{
+	border:0px solid white;
+	padding: 30px;
+	-webkit-box-shadow: 11px 18px 34px -1px rgba(212,94,30,1);
+-moz-box-shadow: 11px 18px 34px -1px rgba(212,94,30,1);
+box-shadow: 11px 18px 34px -1px rgba(212,94,30,1);
+}
+
+.form-container .btn-block{
+	text-decoration: none;
+    color: white;
+    font-size: 20px;
+    background-color: white;
+}
+
+.newsletter{
+	border:0px solid white;
+	padding: 30px;
+	-webkit-box-shadow: 11px 18px 34px -1px rgba(212,94,30,1);
+-moz-box-shadow: 11px 18px 34px -1px rgba(212,94,30,1);
+box-shadow: 11px 18px 34px -1px rgba(212,94,30,1);
+
+}
+
+.bg{
+	background-color: #ff66ff;
+
+}
+
+.bbg{
+	background-color: #ffb3ec;
+	
+}
+
+.MainForm{
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
