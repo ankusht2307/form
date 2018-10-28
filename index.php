@@ -85,7 +85,7 @@
     <div class="row" >
       <div class="col-md-4 col-sm-4 col-xs-12" style="margin-bottom: 0px; margin-top: 0px;"></div>
       <div class="col-md-4 col-sm-4 col-xs-12" >
-        <form class="form-container" action="faq1.php" method="post"  >
+        <form class="form-container" action="faq.php" method="post"  >
           <div class="form-group">
             <input type="text" class="form-control" placeholder="First name" name="fname" required/>
           </div>
