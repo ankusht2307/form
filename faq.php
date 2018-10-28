@@ -25,6 +25,6 @@ else{
 	echo 'inserted';
 }
 
-header("refresh:5; url=index.html");
+header("refresh:5; url=index.php");
 
 ?>
