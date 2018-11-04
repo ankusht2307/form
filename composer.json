@@ -1,0 +1,12 @@
+{
+    "name": "ankush/form",
+    "authors": [
+        {
+            "name": "ankusht2307",
+            "email": "ankusht2307@gmail.com"
+        }
+    ],
+    "require": {
+        "csanquer/pdo-service-provider": "~1.1dev"
+    }
+}
