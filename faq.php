@@ -7,6 +7,10 @@ if (!$connection) {
 	echo 'not connected to the server';
 }
 
+if (!pg_select_db($connection,'d5bfmmilh08e9i')) {
+	echo 'database not selected';
+}
+
 
 $firstName=$_POST['fname'];
 $lastName=$_POST['lname'];
@@ -15,7 +19,7 @@ $Query=$_POST['query'];
 
 $psql="INSERT INTO FAQ (Firstname , Lastname , Email, Query) VALUES ('$firstName', '$lastName', '$Email','$Query')";
 
-if (!mysqli_query($connection,$psql)) {
+if (!pg_query($connection,$psql)) {
 	echo 'not inserted';
 }
 
