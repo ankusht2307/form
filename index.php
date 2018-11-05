@@ -81,30 +81,104 @@
   </div>
   <!--End zodiac selection-->
   <!--content for general-->
-  <div class="container bg" >
-    <div class="row" >
-      <div class="col-md-4 col-sm-4 col-xs-12" style="margin-bottom: 0px; margin-top: 0px;"></div>
-      <div class="col-md-4 col-sm-4 col-xs-12" >
-        <form class="form-container" action="faq.php" method="post"  >
-          <div class="form-group">
-            <input type="text" class="form-control" placeholder="First name" name="fname" required/>
-          </div>
-          <div class="form-group">
-            <input type="text" class="form-control" placeholder="Last name" name="lname" required/>
-          </div>
-          <div class="form-group">
-            <input type="email" class="form-control" id="Email" aria-describedby="emailHelp" placeholder="Enter email" name="email" required/>
-          </div>
-          <div class="form-group">
-            <textarea class="form-control rounded-0" id="textarea" name="query" rows="3" placeholder="Type Your Concern Here"></textarea>
+  <section class="container">
+    
+    <div class="page-header"> 
+            <div class="text-center"> 
+                  <h1>Heroku Postgres Database<small> <br/> Use it locally in PHP</small></h1>
+            </div> 
+       </div>    
+
+    <div class="well">
+        <h3>Prerequisite</h3>
+        <ul>
+            <li>Local server must be SSL enabled</li>
+        </ul>
+    </div> 
+
+    <?
+        /*
+            Sample Database String from Heroku
+            'postgres://wvvgxgeoriumxg:c4e8612ae286a211a8c94976df0811e9b6fcdacb3ef3e468401e0619b38a1004@ec2-107-22-168-211.compute-1.amazonaws.com:5432/d5siauekbh9qlu' 
+            */
+            $dbconn = pg_connect("host=ec2-23-21-171-249.compute-1.amazonaws.com port=5432 dbname=d5bfmmilh08e9i user=weeyppzdvmawbl password=c0b534e93a7b15481529e16eda0cc19504b16834ecc472acbbfe9235603cd4b3");
+            $fName = pg_escape_string($_POST['firstName']);
+            $lName = pg_escape_string($_POST['lastName']);
             
-          </div>
-          <button type="submit" class="btn btn-warning btn-block" style="color:#fff;">~Submit~</button>
-        </form>
-      </div>
-      <div class="col-md-4 col-sm-4 col-xs-12"></div>
-    </div>
-  </div>
+            if(!empty( $fName ) && !empty( $lName )){ 
+                $sql = "INSERT into Person (firstName,lastName) values ('".$fName."', '".$lName."')" ;
+                pg_query($dbconn, $sql); 
+    ?> 
+            <div class="alert alert-success" role="alert">
+                Record Inserted Succesfully in Heroku Postgres Database !!!
+            </div> 
+            <?
+                //close sql if statement bracket
+                }
+            ?>
+     
+     <div class="row">
+         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+             
+            <form method="post">
+                <div class="form-group">
+                    <label for="firstName">First Name</label>
+                    <input required="true" type="tetxt" class="form-control" name="firstName" id="firstName" placeholder="First Name">
+                </div>
+
+                <div class="form-group">
+                    <label for="lastName">Last Name</label>
+                    <input  required="true" type="tetxt" class="form-control" name="lastName" id="lastName" placeholder="Last Name">
+                </div>
+                 
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+
+         </div>
+         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+          
+            <table class="table table-striped table-hover table-bordered">
+                <thead>
+                    <tr>
+                        <th>Key</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                    </tr>
+                </thead>
+                <tbody> 
+                        <?    
+                            /*
+                            Use below code to create table and insert some sample records if using first time
+                            $sql = "drop table Person;";
+                            pg_query($dbconn, $sql);
+                            
+                            $sql = "create table Person (id SERIAL PRIMARY KEY, firstName varchar(15), lastName varchar(15) );";
+                            pg_query($dbconn, $sql);
+                            
+                            $sql = "INSERT into Person (firstName,lastName) values ('Rudra', 'Zaa')" ;
+                            pg_query($dbconn, $sql);
+                            $sql = "INSERT into Person (firstName,lastName) values ('Shivanya', 'Zaa')" ;
+                            pg_query($dbconn, $sql);
+                            $sql = "INSERT into Person (firstName,lastName) values ('Minal', 'Zaa')" ;
+                            pg_query($dbconn, $sql);
+                            */ 
+                            $sql = "select * from Person";
+                            $resultset = pg_query($dbconn, $sql);
+                            while($row = pg_fetch_array($resultset)) {
+                                   echo '<tr>
+                                        <td>'.$row[0].'</td>
+                                        <td>'.$row[1].'</td>
+                                        <td>'.$row[2].'</td>
+                                    </tr>'; 
+                            }
+                            pg_close($dbconn);
+                        ?> 
+              </tbody>
+            </table>
+            </div>
+        </div>
+</section>
+
   <!--End content for genral-->
   <hr style="border-top: 2px dotted orange; border-top-style: dashed;">
   <!--Button for zodiac selection-->
