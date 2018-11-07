@@ -104,9 +104,11 @@
             $dbconn = pg_connect("host=ec2-23-21-171-249.compute-1.amazonaws.com port=5432 dbname=d5bfmmilh08e9i user=weeyppzdvmawbl password=c0b534e93a7b15481529e16eda0cc19504b16834ecc472acbbfe9235603cd4b3");
             $fName = pg_escape_string($_POST['firstName']);
             $lName = pg_escape_string($_POST['lastName']);
+            $emailName = pg_escape_string($_POST['email']);
+            $queryName = pg_escape_string($_POST['query']);
             
             if(!empty( $fName ) && !empty( $lName )){ 
-                $sql = "INSERT into Person (firstName,lastName) values ('".$fName."', '".$lName."')" ;
+                $sql = "INSERT into Person (firstName,lastName,email,query) values ('".$fName."', '".$lName."', '".$emailName."', '".$queryName."')" ;
                 pg_query($dbconn, $sql); 
     ?> 
             <div class="alert alert-success" role="alert">
@@ -122,14 +124,22 @@
              
             <form method="post">
                 <div class="form-group">
-                    <label for="firstName">First Name</label>
-                    <input required="true" type="tetxt" class="form-control" name="firstName" id="firstName" placeholder="First Name">
+                    <input required="true" type="text" class="form-control" name="firstName" id="firstName" placeholder="First Name">
                 </div>
 
                 <div class="form-group">
-                    <label for="lastName">Last Name</label>
-                    <input  required="true" type="tetxt" class="form-control" name="lastName" id="lastName" placeholder="Last Name">
+                    <input  required="true" type="text" class="form-control" name="lastName" id="lastName" placeholder="Last Name">
                 </div>
+
+                <div class="form-group">
+                    <input  required="true" type="email" class="form-control" name="email" id="email" placeholder="Enter Your Email!!">
+                </div>
+
+                <div class="form-group">
+                    <input  required="true" type="text" class="form-control" name="query" id="query" placeholder="Submit Your Query here!!">
+                </div>
+
+
                  
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
@@ -143,6 +153,8 @@
                         <th>Key</th>
                         <th>First Name</th>
                         <th>Last Name</th>
+                        <th>Email</th>
+                        <th>Query</th>
                     </tr>
                 </thead>
                 <tbody> 
@@ -169,6 +181,8 @@
                                         <td>'.$row[0].'</td>
                                         <td>'.$row[1].'</td>
                                         <td>'.$row[2].'</td>
+                                        <td>'.$row[3].'</td>
+                                        <td>'.$row[4].'</td>
                                     </tr>'; 
                             }
                             pg_close($dbconn);
