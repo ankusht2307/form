@@ -136,7 +136,7 @@
                 </div>
 
                 <div class="form-group">
-                    <input  required="true" type="text" class="form-control" name="query" id="query" placeholder="Submit Your Query here!!">
+                    <textarea  required="true" type="text" class="form-control" rows="3" name="query" id="query" placeholder="Submit Your Query here!!"></textarea>
                 </div>
 
 
