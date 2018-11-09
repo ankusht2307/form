@@ -83,19 +83,6 @@
   <!--content for general-->
   <section class="container">
     
-    <div class="page-header"> 
-            <div class="text-center"> 
-                  <h1>Heroku Postgres Database<small> <br/> Use it locally in PHP</small></h1>
-            </div> 
-       </div>    
-
-    <div class="well">
-        <h3>Prerequisite</h3>
-        <ul>
-            <li>Local server must be SSL enabled</li>
-        </ul>
-    </div> 
-
     <?
         /*
             Sample Database String from Heroku
@@ -111,24 +98,24 @@
                 $sql = "INSERT into Person (firstName,lastName,email,query) values ('".$fName."', '".$lName."', '".$emailName."', '".$queryName."')" ;
                 pg_query($dbconn, $sql); 
     ?> 
-            <div class="alert alert-success" role="alert">
+         <!--   <div class="alert alert-success" role="alert">
                 Record Inserted Succesfully in Heroku Postgres Database !!!
-            </div> 
+            </div> -->
             <?
                 //close sql if statement bracket
                 }
             ?>
-     
+     <div class="container bg">
      <div class="row">
-         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-             
-            <form method="post">
+         <div class="col-md-4 col-sm-4 col-xs-12" style="margin-bottom: 0px; margin-top: 0px;"></div>
+      <div class="col-md-4 col-sm-4 col-xs-12" >
+            <form class="form-container" method="post">
                 <div class="form-group">
-                    <input required="true" type="text" class="form-control" name="firstName" id="firstName" placeholder="First Name">
+                    <input required="true" type="text" class="form-control" name="firstName" id="firstName" placeholder="Enter Your First Name!!">
                 </div>
 
                 <div class="form-group">
-                    <input  required="true" type="text" class="form-control" name="lastName" id="lastName" placeholder="Last Name">
+                    <input  required="true" type="text" class="form-control" name="lastName" id="lastName" placeholder="Enter Your Last Name!!">
                 </div>
 
                 <div class="form-group">
@@ -138,14 +125,11 @@
                 <div class="form-group">
                     <textarea  required="true" type="text" class="form-control" rows="3" name="query" id="query" placeholder="Submit Your Query here!!"></textarea>
                 </div>
-
-
-                 
-                <button type="submit" class="btn btn-primary">Submit</button>
+              <button type="submit" class="btn btn-warning btn-block" style="color:#fff;">~Submit~</button>
             </form>
 
          </div>
-         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+<!--         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
           
             <table class="table table-striped table-hover table-bordered">
                 <thead>
@@ -174,22 +158,23 @@
                             $sql = "INSERT into Person (firstName,lastName) values ('Minal', 'Zaa')" ;
                             pg_query($dbconn, $sql);
                             */ 
-                            $sql = "select * from Person";
-                            $resultset = pg_query($dbconn, $sql);
-                            while($row = pg_fetch_array($resultset)) {
-                                   echo '<tr>
-                                        <td>'.$row[0].'</td>
-                                        <td>'.$row[1].'</td>
-                                        <td>'.$row[2].'</td>
-                                        <td>'.$row[3].'</td>
-                                        <td>'.$row[4].'</td>
-                                    </tr>'; 
-                            }
-                            pg_close($dbconn);
+                            //$sql = "select * from Person";
+                            //$resultset = pg_query($dbconn, $sql);
+                            //while($row = pg_fetch_array($resultset)) {
+                                  // echo '<tr>
+                                  //      <td>'.$row[0].'</td>
+                                  //      <td>'.$row[1].'</td>
+                                  //      <td>'.$row[2].'</td>
+                                  //      <td>'.$row[3].'</td>
+                                  //      <td>'.$row[4].'</td>
+                                  //  </tr>'; 
+                          //  }
+                          //  pg_close($dbconn);
                         ?> 
               </tbody>
             </table>
-            </div>
+            </div>    -->
+        </div>
         </div>
 </section>
 
