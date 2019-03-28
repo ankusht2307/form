@@ -88,7 +88,7 @@
             Sample Database String from Heroku
             'postgres://wvvgxgeoriumxg:c4e8612ae286a211a8c94976df0811e9b6fcdacb3ef3e468401e0619b38a1004@ec2-107-22-168-211.compute-1.amazonaws.com:5432/d5siauekbh9qlu' 
             */
-            $dbconn = pg_connect("host=ec2-23-21-171-249.compute-1.amazonaws.com port=5432 dbname=d5bfmmilh08e9i user=weeyppzdvmawbl password=c0b534e93a7b15481529e16eda0cc19504b16834ecc472acbbfe9235603cd4b3");
+            $dbconn = pg_connect(" host='' user='' ");
             $fName = pg_escape_string($_POST['firstName']);
             $lName = pg_escape_string($_POST['lastName']);
             $emailName = pg_escape_string($_POST['email']);
